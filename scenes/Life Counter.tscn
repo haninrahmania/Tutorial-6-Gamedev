@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cn3ustfe1li2p"]
+
+[ext_resource type="Script" path="res://scenes/life_counter.gd" id="1_repdp"]
+
+[node name="LifeCounter" type="MarginContainer"]
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+script = ExtResource("1_repdp")

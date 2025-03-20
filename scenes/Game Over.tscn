@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://1i8gbf78h5x6"]
+
+[ext_resource type="FontFile" uid="uid://cth60gqdxo73p" path="res://assets/Fonts/Raw/continuum bold.ttf" id="1_iwrha"]
+[ext_resource type="Script" path="res://scenes/new_game.gd" id="2_pd0o7"]
+
+[node name="GameOver" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.520269, 1.49807e-06, 3.36915e-07, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 314.0
+offset_top = 245.0
+offset_right = 827.0
+offset_bottom = 347.0
+theme_override_fonts/font = ExtResource("1_iwrha")
+theme_override_font_sizes/font_size = 100
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LinkButton" type="LinkButton" parent="."]
+layout_mode = 0
+offset_left = 466.0
+offset_top = 371.0
+offset_right = 702.0
+offset_bottom = 422.0
+theme_override_colors/font_hover_color = Color(0.92801, 0.697365, 0.76877, 1)
+theme_override_fonts/font = ExtResource("1_iwrha")
+theme_override_font_sizes/font_size = 50
+text = "Main Menu"
+underline = 1
+script = ExtResource("2_pd0o7")
+scene_to_load = "Menu"
+
+[connection signal="pressed" from="LinkButton" to="LinkButton" method="_on_New_Game_pressed"]

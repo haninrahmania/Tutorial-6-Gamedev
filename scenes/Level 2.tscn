@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=4 uid="uid://djhjj82du0q1c"]
+[gd_scene load_steps=7 format=4 uid="uid://djhjj82du0q1c"]
 
-[ext_resource type="PackedScene" path="res://scenes/Player.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://gu4v1vba2uc4" path="res://scenes/Player.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://tpq0ge2lruix" path="res://assets/Familiar Looking Rocket.png" id="3"]
 [ext_resource type="PackedScene" uid="uid://bls6pqt8flug3" path="res://scenes/tile_map.tscn" id="3_ucxpt"]
 [ext_resource type="PackedScene" uid="uid://bul5fybv2rytg" path="res://scenes/Area Trigger.tscn" id="4_l54f5"]
+[ext_resource type="PackedScene" uid="uid://cn3ustfe1li2p" path="res://scenes/Life Counter.tscn" id="5_rkujp"]
+[ext_resource type="PackedScene" uid="uid://b4x1p4k0bscwa" path="res://scenes/Coin.tscn" id="6_shhsx"]
 
 [node name="Level 2" type="Node2D"]
 
@@ -25,3 +27,19 @@ sceneName = "Win Screen"
 position = Vector2(420, 2439)
 scale = Vector2(10.56, 1)
 sceneName = "Level 2"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LifeCounter" parent="CanvasLayer" instance=ExtResource("5_rkujp")]
+
+[node name="Coin" parent="." instance=ExtResource("6_shhsx")]
+position = Vector2(620, 1740)
+
+[node name="Coin2" parent="." instance=ExtResource("6_shhsx")]
+position = Vector2(960, 1611)
+
+[node name="Coin3" parent="." instance=ExtResource("6_shhsx")]
+position = Vector2(1288, 1171)
+
+[node name="Coin4" parent="." instance=ExtResource("6_shhsx")]
+position = Vector2(946, 921)

@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://tq2e2epn4sk2"]
+
+[ext_resource type="FontFile" uid="uid://yi4yarh8b6at" path="res://assets/Fonts/Raw/PersonifiedUXRegular.ttf" id="1_5p4hj"]
+[ext_resource type="Script" path="res://scenes/new_game.gd" id="2_tcysf"]
+[ext_resource type="Texture2D" uid="uid://26wqrar1o8aw" path="res://icon.png" id="3_0ftti"]
+[ext_resource type="Script" path="res://scenes/level_select.gd" id="3_mpcx5"]
+
+[node name="Menu" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9638, 0.834004, 0.92108, 1)
+theme_override_constants/line_spacing = 30
+theme_override_fonts/font = ExtResource("1_5p4hj")
+theme_override_font_sizes/font_size = 150
+text = "Space
+UI"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="LinkButton" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.893498, 0.700116, 0.820256, 1)
+theme_override_colors/font_hover_color = Color(0.952941, 0.858824, 0.890196, 1)
+theme_override_fonts/font = ExtResource("1_5p4hj")
+theme_override_font_sizes/font_size = 50
+text = "New Game"
+underline = 1
+script = ExtResource("2_tcysf")
+scene_to_load = "Level 1"
+
+[node name="LinkButton2" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.906084, 0.609536, 0.742165, 1)
+theme_override_colors/font_hover_color = Color(0.952941, 0.858824, 0.890196, 1)
+theme_override_fonts/font = ExtResource("1_5p4hj")
+theme_override_font_sizes/font_size = 50
+text = "Stage Select"
+underline = 1
+script = ExtResource("3_mpcx5")
+scene_to_load = "Level Select"
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_0ftti")
+stretch_mode = 4
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton" to="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton" method="_on_New_Game_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton2" to="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton2" method="_on_level_pressed"]
